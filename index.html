@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stretch</title>
+  <title>Stretch Background</title>
   <style>
     /* Set the background image */
     body {
@@ -13,11 +13,9 @@
       background-size: cover; /* Ensures the image stretches to cover the entire window */
       background-position: center; /* Centers the image */
       background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-      background-attachment: fixed; /* Keeps the background fixed while content scrolls */
       min-height: 100vh; /* Ensures the body takes up at least the height of the viewport */
-      overflow: auto; /* Allows scrolling if content overflows */
     }
-
+    
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
     body {
@@ -152,6 +150,66 @@
   <a href="https://www.roblox.com/users/550645903/profile" target="_blank">he's Other selfs</a>
   <a href="https://www.roblox.com/users/8370293462/profile" target="_blank">he's Other selfs </a>
 </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stretch</title>
+    <style>
+        /* Make sure the body and html have no margins and fill the screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Style the container of the red box */
+        #red-box {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgba(139, 0, 0, 0.9); /* Dark, intense red */
+            width: 50px; /* Square shape */
+            height: 50px; /* Square shape */
+            cursor: pointer;
+            color: rgba(255, 0, 0, 1); /* Bright red for the "X" */
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace; /* Scary, typewriter font */
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Dark shadow effect */
+            border-radius: 5px; /* Slight rounding for a subtle, dangerous feel */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); /* Dark outer shadow for a menacing effect */
+            transform: rotate(5deg); /* Slight rotation to make it feel off-putting */
+            z-index: 9999; /* Ensures it is on top of everything */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Your content goes here -->
+    <div style="height: 100%; background-color: rgba(0, 0, 0, 0.2);">
+        <h1 style="text-align: center; padding-top: 200px;">This is your content. The scary red box will overlay everything!</h1>
+    </div>
+
+    <!-- Red box with "X" that redirects when clicked -->
+    <div id="red-box" onclick="redirect()">
+        X
+    </div>
+
+    <script>
+        function redirect() {
+            window.location.href = "https://robloxianvideohd.github.io/.wik/"; // Replace with your desired URL
+        }
+    </script>
 
 </body>
 </html>
