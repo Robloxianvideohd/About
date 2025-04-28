@@ -1,67 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scary Red Box with X</title>
-    <style>
-        /* Make sure the body and html have no margins and fill the screen */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: auto; /* Allow scrolling */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stretch Background</title>
+  <style>
+    /* Set the background image */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://cdn.glitch.global/09b5f8f3-7e07-4dde-a2ac-28d22e007f5f/image_2025-04-28_171013429.png?v=1745853014387"); /* Replace with your image path */
+      background-size: cover; /* Ensures the image stretches to cover the entire window */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+      min-height: 100vh; /* Ensures the body takes up at least the height of the viewport */
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-        /* Style the container of the red box */
-        #red-box {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(139, 0, 0, 0.9); /* Dark, intense red */
-            width: 50px; /* Square shape */
-            height: 50px; /* Square shape */
-            cursor: pointer;
-            color: rgba(255, 0, 0, 1); /* Bright red for the "X" */
-            font-size: 30px;
-            font-family: 'Courier New', Courier, monospace; /* Scary, typewriter font */
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Dark shadow effect */
-            border-radius: 5px; /* Slight rounding for a subtle, dangerous feel */
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); /* Dark outer shadow for a menacing effect */
-            transform: rotate(5deg); /* Slight rotation to make it feel off-putting */
-            z-index: 9999; /* Ensures it is on top of everything */
-            transition: all 0.3s ease; /* Smooth transition for the hover effect */
-        }
+    body {
+      color: #410505; /* Dark red text */
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin: 20px;
+      font-size: 18px; /* Increased font size for better readability */
+    }
 
-        /* Hover effect to make it more intense */
-        #red-box:hover {
-            background-color: #8B0000; /* Darker red */
-            transform: rotate(10deg) scale(1.1); /* Slightly larger and more tilted */
-            box-shadow: 0px 0px 25px rgba(255, 0, 0, 1); /* Glowing red shadow */
-        }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 20px; /* Optional: Adds some spacing at the bottom */
+    }
 
-        /* Active state to shrink on click */
-        #red-box:active {
-            transform: scale(0.95); /* Shrinks when clicked */
-        }
-    </style>
+    .desc-box, .pfp-box, .links-box {
+      background-color: rgba(139, 0, 0, 0.8); /* Dark red with transparency */
+      padding: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Darker shadow for depth */
+      border: 3px solid #410505; /* Dark red border around the boxes */
+      border-radius: 5px; /* Optional: Adds a slight roundness to corners */
+    }
+
+    .desc-box {
+      flex-grow: 1;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .pfp-box {
+      width: 250px;
+      flex-shrink: 0;
+      height: fit-content;
+    }
+
+    .pfp-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    .links-box {
+      flex-grow: 1;
+      margin-top: 20px; /* Adds space between the profile box and the links box */
+    }
+
+    .links-box a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .links-box a:hover {
+      color: #ff6f61; /* Change color on hover for a stylish effect */
+    }
+
+  </style>
 </head>
 <body>
 
-    <!-- Red box with "X" that redirects when clicked -->
-    <div id="red-box" onclick="redirect()">
-        X
-    </div>
+<div class="container">
+  <div class="desc-box">
+    <h2>RobloxianVideoHD</h2>
+    <p>
+      RobloxianVideoHD (also known as CreepyMF or FreakyMF) is a male who crafted his own identity and backstory. Having endured a lot over the years, he has especially been shaped by over seven years of heavy Roblox gaming. His exact age remains uncertain, as he tends to change it whenever he feels like it; however, it is generally estimated to fall somewhere between 13 and 36. He often avoids claiming to be 12 or younger to prevent being muted for underage restrictions on the platform.
+      <br><br>
+    </p>
+    He is fluent in Swedish and English, moving smoothly between the two languages. He does change his voice tone, sometimes deeper, sometimes higher further adding to the mystery of his true age. His anonymity remains intact, as no one has truly seen him, and even if they did, it’s believed that no one would actually believe it was him anyway.
+    <br><br>
+    <p>
+      *I walk my own path, without a god to guide me, for I find peace in the absence of fear—fear of hell, fear of judgment. My time is finite, and it is only within this limited span that I must choose to live. No divine force commands my destiny; I command my own.*
+      <br><br>
+      *Over the years, I have traversed the digital world, marking my presence, leaving a trail of experiences behind. Yet, despite my journey through these virtual realms, I have been banned from many, with my actions often misunderstood. Here is a reflection of the times I was shut out, each ban a part of my story, each ban a symbol of my defiance, my own decisions, and my own identity.* 
+      <br><br>
 
-    <script>
-        function redirect() {
-            window.location.href = "https://robloxianvideohd.github.io/.wik/"; // Redirect to your desired URL
-        }
-    </script>
+      Banned History For His Actions:
+      <br>
+      1. Roblox High School [Legacy] - Perm Banned 2025-03-30
+      <br>
+      2. BedWars - Perm Banned 2020-06-21
+      <br>
+      3. Asylum Life - Perm Banned 2025-03-30
+      <br>
+      4. Facility Roleplay - Perm Banned 2019-05-20
+      <br>
+      5. Typical Colors 2 - Perm Banned 2020-09-12
+      <br>
+      6. Write a Letter - Perm Banned 2025-04-15
+      <br>
+      7. Targaot Server - Perm Banned 2025-03-29
+      <br>
+      8. Welcome to Bloxburg - Perm Banned 2021-08-04
+      <br>
+      9. BIG Paintball! Classic - Perm Banned 2023-06-22
+      <br>
+      10. Furana! - Perm Banned 2023-08-05
+      <br>
+      11. Booth Game - Perm Banned 2025-04-15
+      <br>
+      12. The Spades' Diner - Perm Banned 2025-03-13
+      <br>
+      13. Arsenal - 365 Day Banned 2022-07-22
+      <br>
+      14. Maple Hospital - 30 Day Banned 2025-03-31
+      <br>
+      15. No-Scope Arcade - 365 Day Banned 2023-07-27
+      <br>
+      16. Boykisser Game - Perm Banned 2024-02-04
+      <br>
+      17. Catalog Avatar Creator - Perm Banned 2023-09-21
+      <br>
+      18. Fisch - Perm Banned 2025-04-26
+      <br>
+      19. dingus - Perm Banned 2025-04-26
+      <br>
+      20. www.roblox.com - Terminated 3x (Appealed) 2023-02-17
+    </p>
+  </div>
+
+  <div class="pfp-box">
+    <img src="https://cdn.glitch.global/09b5f8f3-7e07-4dde-a2ac-28d22e007f5f/adfadd.png?v=1745853352826" alt="Profile Picture">
+  </div>
+</div>
+
+<!-- New links section under profile -->
+<div class="links-box">
+  <h3>Useful Links:</h3>
+  <a href="https://www.roblox.com/communities/11311110" target="_blank">He's Own Group</a>
+  <a href="https://www.roblox.com/users/550645903/profile" target="_blank">he's Other selfs</a>
+  <a href="https://www.roblox.com/users/8370293462/profile" target="_blank">he's Other selfs </a>
+</div>
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stretch Background</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>A</h1>
+</body>
+<script src="script.js"></script>
+</html>
+
