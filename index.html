@@ -159,27 +159,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stretch Background</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Stretch Background Effect</h1>
-</body>
-<script src="script.js"></script>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scary Red Box with X</title>
     <style>
+        /* Make sure the body and html have no margins and fill the screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
         /* Style the container of the red box */
         #red-box {
             position: fixed;
-            top: 10px;
-            right: 10px;
+            top: 0;
+            right: 0;
             background-color: rgba(139, 0, 0, 0.9); /* Dark, intense red */
             width: 50px; /* Square shape */
             height: 50px; /* Square shape */
@@ -195,11 +189,18 @@
             border-radius: 5px; /* Slight rounding for a subtle, dangerous feel */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); /* Dark outer shadow for a menacing effect */
             transform: rotate(5deg); /* Slight rotation to make it feel off-putting */
+            z-index: 9999; /* Ensures it is on top of everything */
         }
     </style>
 </head>
 <body>
 
+    <!-- Your content goes here -->
+    <div style="height: 100%; background-color: rgba(0, 0, 0, 0.2);">
+        <h1 style="text-align: center; padding-top: 200px;">This is your content. The scary red box will overlay everything!</h1>
+    </div>
+
+    <!-- Red box with "X" that redirects when clicked -->
     <div id="red-box" onclick="redirect()">
         X
     </div>
@@ -212,4 +213,3 @@
 
 </body>
 </html>
-
