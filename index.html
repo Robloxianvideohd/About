@@ -1,129 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scary Red Box with X</title>
-  <style>
-    /* Reset margin and padding for full-screen effect */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden; /* Remove scrollbars for a more immersive feel */
-      background-color: #000; /* Black background for eerie vibe */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Red Box with X</title>
+    <style>
+        /* Make sure the body and html have no margins and fill the screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #121212; /* Dark background */
+            overflow: auto;
+            color: #fff; /* White text for contrast */
+        }
 
-    /* Dark, horror-style font */
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+        /* Style the container of the red box */
+        #red-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(139, 0, 0, 0.9); /* Dark, intense red */
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            color: rgba(255, 0, 0, 1); /* Bright red for the "X" */
+            font-size: 35px;
+            font-family: 'Courier New', Courier, monospace; /* Scary, typewriter font */
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Strong shadow effect */
+            border-radius: 10px; /* Slight rounding for a subtle, dangerous feel */
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9); /* Dark outer shadow for a menacing effect */
+            transform: rotate(15deg); /* More rotation for unsettling effect */
+            z-index: 9999; /* Ensures it is on top of everything */
+            animation: pulse 1.5s infinite; /* Added pulse animation to give movement */
+        }
 
-    /* Style for the red box with "X" */
-    #red-box {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: rgba(139, 0, 0, 0.9); /* Dark, intense red */
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      color: #ff0000; /* Bright red for the "X" */
-      font-size: 40px;
-      font-family: 'Cinzel', serif; /* Horror-like font */
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Creepy shadow effect */
-      border-radius: 10px;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9); /* Deep, menacing shadow */
-      transform: rotate(5deg); /* Slightly tilted for unsettling effect */
-      z-index: 9999;
-      animation: shake 0.5s infinite alternate; /* Animation for shaking */
-    }
+        /* Pulsing effect for the "X" button */
+        @keyframes pulse {
+            0% {
+                transform: rotate(15deg) scale(1);
+            }
+            50% {
+                transform: rotate(15deg) scale(1.1); /* Slightly bigger at the middle */
+            }
+            100% {
+                transform: rotate(15deg) scale(1);
+            }
+        }
 
-    /* Shake animation */
-    @keyframes shake {
-      0% { transform: rotate(5deg); }
-      100% { transform: rotate(-5deg); }
-    }
+        /* Make sure the content is dark and mysterious */
+        .content {
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    /* Dark, red text for body */
-    body {
-      color: #ff1a1a;
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-      animation: flicker 3s infinite alternate; /* Flicker effect */
-    }
+        h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Glowing text effect */
+            letter-spacing: 5px;
+            color: #ff3333; /* Blood red text color */
+        }
 
-    /* Flicker text animation */
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
-    /* Style for content box */
-    .container {
-      position: relative;
-      z-index: 1;
-      color: #e60000;
-      padding: 30px;
-    }
-
-    .container h1, .container p {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      letter-spacing: 2px;
-      animation: bloodDrip 5s infinite alternate; /* Blood-drip animation */
-    }
-
-    /* Blood dripping animation for text */
-    @keyframes bloodDrip {
-      0% { color: #ff0000; }
-      100% { color: #660000; }
-    }
-
-    /* Backdrop darkening */
-    .dark-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9); /* Overlay for a darker atmosphere */
-      z-index: -1;
-    }
-  </style>
+    </style>
 </head>
 <body>
 
-  <!-- Background Overlay for extra spooky vibe -->
-  <div class="dark-overlay"></div>
+    <!-- Content area -->
+    <div class="content">
+        <h1>Welcome to the Dark</h1>
+        <!-- You can add more spooky content here -->
+    </div>
 
-  <!-- Content container -->
-  <div class="container">
-    <h1>Welcome to the Haunted Web</h1>
-    <p>The shadows are watching you...</p>
-    <p>Are you ready to face your fears?</p>
-  </div>
+    <!-- Red box with "X" that redirects when clicked -->
+    <div id="red-box" onclick="redirect()">
+        X
+    </div>
 
-  <!-- Scary Red Box with "X" that redirects when clicked -->
-  <div id="red-box" onclick="redirect()">
-    X
-  </div>
-
-  <script>
-    // Function to redirect to a scary page
-    function redirect() {
-      window.location.href = "https://robloxianvideohd.github.io/.wik/"; // Link to your desired scary URL
-    }
-
-    // Add eerie sound effects to enhance the atmosphere
-    var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
-    audio.play();
-  </script>
+    <script>
+        function redirect() {
+            window.location.href = "https://robloxianvideohd.github.io/.wik/"; // Replace with your desired URL
+        }
+    </script>
 
 </body>
 </html>
